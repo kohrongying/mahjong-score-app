@@ -4,19 +4,19 @@
 	let players = [
 		{
 			name: 'PLAYER1',
-			score: 2000,
+			score: 20000,
 		},
 		{
 			name: 'PLAYER2',
-			score: 2000,
+			score: 20000,
 		},
 		{
 			name: 'PLAYER3',
-			score: 2000,
+			score: 20000,
 		},
 		{
 			name: 'PLAYER4',
-			score: 2000,
+			score: 20000,
 		},
 	]
 
@@ -24,9 +24,9 @@
 		gameStatus = statusChange
 	}
 
-	let winnerIndex = ""
+	let winnerIndex = null
 	let points = 0
-	let loserIndex = ""
+	let loserIndex = null
 
 	const setWinner = (index) => () => {
 		winnerIndex = index
@@ -37,31 +37,36 @@
 	}
 
 	const setLoser = (index) => () => {
-		loserIndex = index;
+		loserIndex = index
 	}
 
 	const computeResult = () => {
-		if (loserIndex === 4) {
-			points += 100
-		}
+		let score = 100 * Math.pow(2, points - 1)
+
 		players.forEach((player, i) => {
-			if (i !== winnerIndex && i !== loserIndex) {
-				player.score -= points
-			}
-			if (i === loserIndex) {
-				player.score -= (points + 100)
-			}
 			if (i === winnerIndex) {
-				player.score += points * 3
-				if (loserIndex !== 4) {
-					player.score += 100
-				}
+				player.score += 3 * score
+			} else {
+				player.score -= score
 			}
 		})
 
-		winnerIndex = ""
+		if (loserIndex === null) {
+			players.forEach((player, i) => {
+				if (i === winnerIndex) {
+					player.score += 3 * score
+				} else {
+					player.score -= score
+				}
+			})
+		} else {
+			players[winnerIndex].score += score
+			players[loserIndex].score -= score
+		}
+
+		winnerIndex = null
 		points = 0
-		loserIndex = ""
+		loserIndex = null
 		gameStatus = "GAME_START"
 	}
 </script>
@@ -99,14 +104,14 @@
 		</div>
 		<h3>Points</h3>
 		<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr;">
-			<button on:click={setPoints(100)} style="background-color: {points === 100 ? "yellow" : "#f4f4f4"}">1</button>
-			<button on:click={setPoints(200)} style="background-color: {points === 200 ? "yellow" : "#f4f4f4"}">2</button>
-			<button on:click={setPoints(300)} style="background-color: {points === 300 ? "yellow" : "#f4f4f4"}">3</button>
-			<button on:click={setPoints(400)} style="background-color: {points === 400 ? "yellow" : "#f4f4f4"}">4</button>
-			<button on:click={setPoints(500)} style="background-color: {points === 500 ? "yellow" : "#f4f4f4"}">5</button>
+			<button on:click={setPoints(1)} style="background-color: {points === 1 ? "yellow" : "#f4f4f4"}">1</button>
+			<button on:click={setPoints(2)} style="background-color: {points === 2 ? "yellow" : "#f4f4f4"}">2</button>
+			<button on:click={setPoints(3)} style="background-color: {points === 3 ? "yellow" : "#f4f4f4"}">3</button>
+			<button on:click={setPoints(4)} style="background-color: {points === 4 ? "yellow" : "#f4f4f4"}">4</button>
+			<button on:click={setPoints(5)} style="background-color: {points === 5 ? "yellow" : "#f4f4f4"}">5</button>
 		</div>
 		<h3>Loser</h3>
-		<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr;">
+		<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
 			{#each players as player, i}
 				<button
 					on:click={setLoser(i)}
@@ -116,7 +121,6 @@
 					{player.name}
 				</button>
 			{/each}
-			<button on:click={setLoser(4)}>OWN TOUCH</button>
 		</div>
 		<button on:click={computeResult}>NEXT ROUND</button>
 	{/if}
