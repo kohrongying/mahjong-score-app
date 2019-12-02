@@ -5,25 +5,21 @@
 		{
 			name: 'PLAYER1',
 			score: 2000,
-			dealer: true,
 		},
 		{
 			name: 'PLAYER2',
 			score: 2000,
-			dealer: false,
 		},
 		{
 			name: 'PLAYER3',
 			score: 2000,
-			dealer: false,
 		},
 		{
 			name: 'PLAYER4',
 			score: 2000,
-			dealer: false,
 		},
 	]
-	
+
 	const changeStatus = (statusChange) => () => {
 		gameStatus = statusChange
 	}
@@ -62,7 +58,7 @@
 				}
 			}
 		})
-		
+
 		winnerIndex = ""
 		points = 0
 		loserIndex = ""
