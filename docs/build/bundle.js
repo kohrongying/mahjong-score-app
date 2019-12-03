@@ -346,7 +346,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (74:1) {#if gameStatus == 'WELCOME'}
+    // (75:1) {#if gameStatus == 'WELCOME'}
     function create_if_block_3(ctx) {
     	let button;
     	let dispose;
@@ -355,7 +355,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			button.textContent = "New Game";
-    			add_location(button, file, 74, 2, 1174);
+    			add_location(button, file, 75, 2, 1210);
     			dispose = listen_dev(button, "click", /*changeStatus*/ ctx[5]("GAME_INTIALISED"), false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -372,14 +372,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(74:1) {#if gameStatus == 'WELCOME'}",
+    		source: "(75:1) {#if gameStatus == 'WELCOME'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:1) {#if gameStatus == 'GAME_INTIALISED'}
+    // (80:1) {#if gameStatus == 'GAME_INTIALISED'}
     function create_if_block_2(ctx) {
     	let h1;
     	let t1;
@@ -407,8 +407,8 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "GO";
     			attr_dev(h1, "class", "svelte-aqx5r3");
-    			add_location(h1, file, 79, 2, 1298);
-    			add_location(button, file, 85, 2, 1412);
+    			add_location(h1, file, 80, 2, 1334);
+    			add_location(button, file, 86, 2, 1448);
     			dispose = listen_dev(button, "click", /*changeStatus*/ ctx[5]("GAME_START"), false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -460,14 +460,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(79:1) {#if gameStatus == 'GAME_INTIALISED'}",
+    		source: "(80:1) {#if gameStatus == 'GAME_INTIALISED'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:2) {#each players as player}
+    // (82:2) {#each players as player}
     function create_each_block_3(ctx) {
     	let div;
     	let input;
@@ -481,8 +481,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			input = element("input");
-    			add_location(input, file, 82, 4, 1357);
-    			add_location(div, file, 81, 3, 1347);
+    			add_location(input, file, 83, 4, 1393);
+    			add_location(div, file, 82, 3, 1383);
     			dispose = listen_dev(input, "input", input_input_handler);
     		},
     		m: function mount(target, anchor) {
@@ -507,14 +507,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(81:2) {#each players as player}",
+    		source: "(82:2) {#each players as player}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:1) {#if gameStatus == 'GAME_START'}
+    // (89:1) {#if gameStatus == 'GAME_START'}
     function create_if_block_1(ctx) {
     	let t0;
     	let button;
@@ -535,7 +535,7 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "ADD RESULT";
-    			add_location(button, file, 94, 2, 1642);
+    			add_location(button, file, 95, 2, 1678);
     			dispose = listen_dev(button, "click", /*changeStatus*/ ctx[5]("GAME_ADD_RESULT"), false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -582,14 +582,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(88:1) {#if gameStatus == 'GAME_START'}",
+    		source: "(89:1) {#if gameStatus == 'GAME_START'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:2) {#each players as player}
+    // (90:2) {#each players as player}
     function create_each_block_2(ctx) {
     	let div;
     	let p0;
@@ -608,10 +608,10 @@ var app = (function () {
     			t1 = space();
     			p1 = element("p");
     			t2 = text(t2_value);
-    			add_location(p0, file, 90, 4, 1573);
-    			add_location(p1, file, 91, 4, 1598);
+    			add_location(p0, file, 91, 4, 1609);
+    			add_location(p1, file, 92, 4, 1634);
     			attr_dev(div, "class", "player-score svelte-aqx5r3");
-    			add_location(div, file, 89, 3, 1542);
+    			add_location(div, file, 90, 3, 1578);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -634,14 +634,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(89:2) {#each players as player}",
+    		source: "(90:2) {#each players as player}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:1) {#if gameStatus == 'GAME_ADD_RESULT'}
+    // (98:1) {#if gameStatus == 'GAME_ADD_RESULT'}
     function create_if_block(ctx) {
     	let h30;
     	let t1;
@@ -670,8 +670,6 @@ var app = (function () {
     	let div2;
     	let t17;
     	let button5;
-    	let t19;
-    	let button6;
     	let dispose;
     	let each_value_1 = /*players*/ ctx[1];
     	let each_blocks_1 = [];
@@ -729,43 +727,38 @@ var app = (function () {
 
     			t17 = space();
     			button5 = element("button");
-    			button5.textContent = "OWN TOUCH";
-    			t19 = space();
-    			button6 = element("button");
-    			button6.textContent = "NEXT ROUND";
-    			add_location(h30, file, 97, 2, 1761);
+    			button5.textContent = "NEXT ROUND";
+    			add_location(h30, file, 98, 2, 1797);
     			set_style(div0, "display", "grid");
     			set_style(div0, "grid-template-columns", "1fr 1fr 1fr 1fr");
-    			add_location(div0, file, 98, 2, 1779);
-    			add_location(h31, file, 103, 2, 2030);
-    			set_style(button0, "background-color", /*points*/ ctx[3] === 100 ? "yellow" : "#f4f4f4");
-    			add_location(button0, file, 105, 3, 2124);
-    			set_style(button1, "background-color", /*points*/ ctx[3] === 200 ? "yellow" : "#f4f4f4");
-    			add_location(button1, file, 106, 3, 2238);
-    			set_style(button2, "background-color", /*points*/ ctx[3] === 300 ? "yellow" : "#f4f4f4");
-    			add_location(button2, file, 107, 3, 2352);
-    			set_style(button3, "background-color", /*points*/ ctx[3] === 400 ? "yellow" : "#f4f4f4");
-    			add_location(button3, file, 108, 3, 2466);
-    			set_style(button4, "background-color", /*points*/ ctx[3] === 500 ? "yellow" : "#f4f4f4");
-    			add_location(button4, file, 109, 3, 2580);
+    			add_location(div0, file, 99, 2, 1815);
+    			add_location(h31, file, 104, 2, 2066);
+    			set_style(button0, "background-color", /*points*/ ctx[3] === 1 ? "yellow" : "#f4f4f4");
+    			add_location(button0, file, 106, 3, 2160);
+    			set_style(button1, "background-color", /*points*/ ctx[3] === 2 ? "yellow" : "#f4f4f4");
+    			add_location(button1, file, 107, 3, 2270);
+    			set_style(button2, "background-color", /*points*/ ctx[3] === 3 ? "yellow" : "#f4f4f4");
+    			add_location(button2, file, 108, 3, 2380);
+    			set_style(button3, "background-color", /*points*/ ctx[3] === 4 ? "yellow" : "#f4f4f4");
+    			add_location(button3, file, 109, 3, 2490);
+    			set_style(button4, "background-color", /*points*/ ctx[3] === 5 ? "yellow" : "#f4f4f4");
+    			add_location(button4, file, 110, 3, 2600);
     			set_style(div1, "display", "grid");
     			set_style(div1, "grid-template-columns", "1fr 1fr 1fr 1fr 1fr");
-    			add_location(div1, file, 104, 2, 2048);
-    			add_location(h32, file, 111, 2, 2702);
-    			add_location(button5, file, 122, 3, 3021);
+    			add_location(div1, file, 105, 2, 2084);
+    			add_location(h32, file, 112, 2, 2718);
     			set_style(div2, "display", "grid");
-    			set_style(div2, "grid-template-columns", "1fr 1fr 1fr 1fr 1fr");
-    			add_location(div2, file, 112, 2, 2719);
-    			add_location(button6, file, 124, 2, 3082);
+    			set_style(div2, "grid-template-columns", "1fr 1fr 1fr 1fr");
+    			add_location(div2, file, 113, 2, 2735);
+    			add_location(button5, file, 124, 2, 3041);
 
     			dispose = [
-    				listen_dev(button0, "click", /*setPoints*/ ctx[7](100), false, false, false),
-    				listen_dev(button1, "click", /*setPoints*/ ctx[7](200), false, false, false),
-    				listen_dev(button2, "click", /*setPoints*/ ctx[7](300), false, false, false),
-    				listen_dev(button3, "click", /*setPoints*/ ctx[7](400), false, false, false),
-    				listen_dev(button4, "click", /*setPoints*/ ctx[7](500), false, false, false),
-    				listen_dev(button5, "click", /*setLoser*/ ctx[8](4), false, false, false),
-    				listen_dev(button6, "click", /*computeResult*/ ctx[9], false, false, false)
+    				listen_dev(button0, "click", /*setPoints*/ ctx[7](1), false, false, false),
+    				listen_dev(button1, "click", /*setPoints*/ ctx[7](2), false, false, false),
+    				listen_dev(button2, "click", /*setPoints*/ ctx[7](3), false, false, false),
+    				listen_dev(button3, "click", /*setPoints*/ ctx[7](4), false, false, false),
+    				listen_dev(button4, "click", /*setPoints*/ ctx[7](5), false, false, false),
+    				listen_dev(button5, "click", /*computeResult*/ ctx[9], false, false, false)
     			];
     		},
     		m: function mount(target, anchor) {
@@ -804,10 +797,8 @@ var app = (function () {
     				each_blocks[i].m(div2, null);
     			}
 
-    			append_dev(div2, t17);
-    			append_dev(div2, button5);
-    			insert_dev(target, t19, anchor);
-    			insert_dev(target, button6, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, button5, anchor);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*winnerIndex, setWinner, players*/ 70) {
@@ -834,23 +825,23 @@ var app = (function () {
     			}
 
     			if (dirty & /*points*/ 8) {
-    				set_style(button0, "background-color", /*points*/ ctx[3] === 100 ? "yellow" : "#f4f4f4");
+    				set_style(button0, "background-color", /*points*/ ctx[3] === 1 ? "yellow" : "#f4f4f4");
     			}
 
     			if (dirty & /*points*/ 8) {
-    				set_style(button1, "background-color", /*points*/ ctx[3] === 200 ? "yellow" : "#f4f4f4");
+    				set_style(button1, "background-color", /*points*/ ctx[3] === 2 ? "yellow" : "#f4f4f4");
     			}
 
     			if (dirty & /*points*/ 8) {
-    				set_style(button2, "background-color", /*points*/ ctx[3] === 300 ? "yellow" : "#f4f4f4");
+    				set_style(button2, "background-color", /*points*/ ctx[3] === 3 ? "yellow" : "#f4f4f4");
     			}
 
     			if (dirty & /*points*/ 8) {
-    				set_style(button3, "background-color", /*points*/ ctx[3] === 400 ? "yellow" : "#f4f4f4");
+    				set_style(button3, "background-color", /*points*/ ctx[3] === 4 ? "yellow" : "#f4f4f4");
     			}
 
     			if (dirty & /*points*/ 8) {
-    				set_style(button4, "background-color", /*points*/ ctx[3] === 500 ? "yellow" : "#f4f4f4");
+    				set_style(button4, "background-color", /*points*/ ctx[3] === 5 ? "yellow" : "#f4f4f4");
     			}
 
     			if (dirty & /*loserIndex, winnerIndex, setLoser, players*/ 278) {
@@ -865,7 +856,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div2, t17);
+    						each_blocks[i].m(div2, null);
     					}
     				}
 
@@ -890,8 +881,8 @@ var app = (function () {
     			if (detaching) detach_dev(t16);
     			if (detaching) detach_dev(div2);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t19);
-    			if (detaching) detach_dev(button6);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(button5);
     			run_all(dispose);
     		}
     	};
@@ -900,14 +891,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(97:1) {#if gameStatus == 'GAME_ADD_RESULT'}",
+    		source: "(98:1) {#if gameStatus == 'GAME_ADD_RESULT'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (100:3) {#each players as player, i}
+    // (101:3) {#each players as player, i}
     function create_each_block_1(ctx) {
     	let button;
     	let t_value = /*player*/ ctx[12].name + "";
@@ -923,7 +914,7 @@ var app = (function () {
     			? "yellow"
     			: "#f4f4f4");
 
-    			add_location(button, file, 100, 4, 1884);
+    			add_location(button, file, 101, 4, 1920);
     			dispose = listen_dev(button, "click", /*setWinner*/ ctx[6](/*i*/ ctx[14]), false, false, false);
     		},
     		m: function mount(target, anchor) {
@@ -950,41 +941,44 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(100:3) {#each players as player, i}",
+    		source: "(101:3) {#each players as player, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (114:3) {#each players as player, i}
+    // (115:3) {#each players as player, i}
     function create_each_block(ctx) {
     	let button;
-    	let t_value = /*player*/ ctx[12].name + "";
-    	let t;
+    	let t0_value = /*player*/ ctx[12].name + "";
+    	let t0;
+    	let t1;
     	let button_disabled_value;
     	let dispose;
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			t = text(t_value);
+    			t0 = text(t0_value);
+    			t1 = space();
 
     			set_style(button, "background-color", /*loserIndex*/ ctx[4] === /*i*/ ctx[14]
     			? "red"
     			: "#f4f4f4");
 
     			button.disabled = button_disabled_value = /*winnerIndex*/ ctx[2] === /*i*/ ctx[14];
-    			add_location(button, file, 114, 4, 2828);
+    			add_location(button, file, 115, 4, 2840);
     			dispose = listen_dev(button, "click", /*setLoser*/ ctx[8](/*i*/ ctx[14]), false, false, false);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
-    			append_dev(button, t);
+    			append_dev(button, t0);
+    			append_dev(button, t1);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*players*/ 2 && t_value !== (t_value = /*player*/ ctx[12].name + "")) set_data_dev(t, t_value);
+    			if (dirty & /*players*/ 2 && t0_value !== (t0_value = /*player*/ ctx[12].name + "")) set_data_dev(t0, t0_value);
 
     			if (dirty & /*loserIndex*/ 16) {
     				set_style(button, "background-color", /*loserIndex*/ ctx[4] === /*i*/ ctx[14]
@@ -1006,7 +1000,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(114:3) {#each players as player, i}",
+    		source: "(115:3) {#each players as player, i}",
     		ctx
     	});
 
@@ -1034,7 +1028,7 @@ var app = (function () {
     			t2 = space();
     			if (if_block3) if_block3.c();
     			attr_dev(main, "class", "svelte-aqx5r3");
-    			add_location(main, file, 72, 0, 1134);
+    			add_location(main, file, 73, 0, 1170);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1129,35 +1123,19 @@ var app = (function () {
     	let gameStatus = "WELCOME";
 
     	let players = [
-    		{
-    			name: "PLAYER1",
-    			score: 2000,
-    			dealer: true
-    		},
-    		{
-    			name: "PLAYER2",
-    			score: 2000,
-    			dealer: false
-    		},
-    		{
-    			name: "PLAYER3",
-    			score: 2000,
-    			dealer: false
-    		},
-    		{
-    			name: "PLAYER4",
-    			score: 2000,
-    			dealer: false
-    		}
+    		{ name: "PLAYER1", score: 20000 },
+    		{ name: "PLAYER2", score: 20000 },
+    		{ name: "PLAYER3", score: 20000 },
+    		{ name: "PLAYER4", score: 20000 }
     	];
 
     	const changeStatus = statusChange => () => {
     		$$invalidate(0, gameStatus = statusChange);
     	};
 
-    	let winnerIndex = "";
+    	let winnerIndex = null;
     	let points = 0;
-    	let loserIndex = "";
+    	let loserIndex = null;
 
     	const setWinner = index => () => {
     		$$invalidate(2, winnerIndex = index);
@@ -1172,31 +1150,32 @@ var app = (function () {
     	};
 
     	const computeResult = () => {
-    		if (loserIndex === 4) {
-    			$$invalidate(3, points += 100);
-    		}
+    		let score = 100 * Math.pow(2, points - 1);
 
     		players.forEach((player, i) => {
-    			if (i !== winnerIndex && i !== loserIndex) {
-    				player.score -= points;
-    			}
-
-    			if (i === loserIndex) {
-    				player.score -= points + 100;
-    			}
-
     			if (i === winnerIndex) {
-    				player.score += points * 3;
-
-    				if (loserIndex !== 4) {
-    					player.score += 100;
-    				}
+    				player.score += 3 * score;
+    			} else {
+    				player.score -= score;
     			}
     		});
 
-    		$$invalidate(2, winnerIndex = "");
+    		if (loserIndex === null) {
+    			players.forEach((player, i) => {
+    				if (i === winnerIndex) {
+    					player.score += 3 * score;
+    				} else {
+    					player.score -= score;
+    				}
+    			});
+    		} else {
+    			$$invalidate(1, players[winnerIndex].score += score, players);
+    			$$invalidate(1, players[loserIndex].score -= score, players);
+    		}
+
+    		$$invalidate(2, winnerIndex = null);
     		$$invalidate(3, points = 0);
-    		$$invalidate(4, loserIndex = "");
+    		$$invalidate(4, loserIndex = null);
     		$$invalidate(0, gameStatus = "GAME_START");
     	};
 
