@@ -76,8 +76,9 @@
 	const computeInstantPayment = () => {
 		let score = 100 * Math.pow(2, points - 1)
 
-		players[winnerIndex].score += score
-		players[loserIndex].score -= score
+		players[winnerIndex].score += 3 * score
+		players.filter((_, i) => i !== winnerIndex)
+				.forEach(p => p.score -= score)
 
 		winnerIndex = null
 		points = 0
@@ -152,18 +153,6 @@
 		<div class="button-group points">
 			<button on:click={setPoints(1)} style="background-color: {points === 1 ? "gold" : "#f4f4f4"}">1</button>
 			<button on:click={setPoints(2)} style="background-color: {points === 2 ? "gold" : "#f4f4f4"}">2</button>
-		</div>
-		<h3>Loser</h3>
-		<div class="button-group loser">
-			{#each players as player, i}
-				<button
-						on:click={setLoser(i)}
-						style="background-color: {loserIndex === i ? "gold" : "#f4f4f4"}"
-					disabled={winnerIndex === i}
-				>
-					{player.name}
-					</button>
-			{/each}
 		</div>
 		<button on:click={computeInstantPayment}>NEXT ROUND</button>
 	{/if}
