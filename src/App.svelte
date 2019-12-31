@@ -72,6 +72,18 @@
 		loserIndex = null
 		gameStatus = "GAME_START"
 	}
+
+	const computeInstantPayment = () => {
+		let score = 100 * Math.pow(2, points - 1)
+
+		players[winnerIndex].score += score
+		players[loserIndex].score -= score
+
+		winnerIndex = null
+		points = 0
+		loserIndex = null
+		gameStatus = "GAME_START"
+	}
 </script>
 
 <main>
@@ -98,6 +110,7 @@
 			</div>
 		{/each}
 		<button on:click={changeStatus('GAME_ADD_RESULT')}>ADD RESULT</button>
+		<button on:click={changeStatus('GAME_INSTANT_PAYMENT')}>INSTANT PAYMENT</button>
 	{/if}
 	{#if gameStatus == 'GAME_ADD_RESULT'}
 		<h3>Winner</h3>
@@ -128,7 +141,32 @@
 		</div>
 		<button on:click={computeResult}>NEXT ROUND</button>
 	{/if}
-
+	{#if gameStatus == 'GAME_INSTANT_PAYMENT'}
+		<h3>Winner</h3>
+		<div class="button-group winner">
+			{#each players as player, i}
+				<button on:click={setWinner(i)} style="background-color: {winnerIndex === i ? "gold" : "#f4f4f4"}">{player.name}</button>
+			{/each}
+		</div>
+		<h3>Points</h3>
+		<div class="button-group points">
+			<button on:click={setPoints(1)} style="background-color: {points === 1 ? "gold" : "#f4f4f4"}">1</button>
+			<button on:click={setPoints(2)} style="background-color: {points === 2 ? "gold" : "#f4f4f4"}">2</button>
+		</div>
+		<h3>Loser</h3>
+		<div class="button-group loser">
+			{#each players as player, i}
+				<button
+						on:click={setLoser(i)}
+						style="background-color: {loserIndex === i ? "gold" : "#f4f4f4"}"
+					disabled={winnerIndex === i}
+				>
+					{player.name}
+					</button>
+			{/each}
+		</div>
+		<button on:click={computeInstantPayment}>NEXT ROUND</button>
+	{/if}
 </main>
 
 <style>
