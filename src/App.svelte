@@ -101,7 +101,7 @@
     let deltas = [0, 0, 0, 0];
 
     deltas[winnerIndex] += 4 * score;
-    deltas.map(delta => delta - score);
+    deltas = deltas.map(delta => delta - score);
 
     let description = `${players[winnerIndex].name} gets an instant payment worth ${points} ${points === 1 ? 'point' : 'points'}`;
     events.update(events => {
